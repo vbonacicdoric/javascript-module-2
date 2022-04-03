@@ -16,13 +16,30 @@ Write JavaScript below that logs:
 
 */
 
+ const letraP = document.querySelectorAll("p")
+ console.log(letraP);
 
-/*
+
+ const divElement = document.querySelector("div")
+ console.log(divElement);
+
+ const idElement = document.querySelector("#jumbotron-text")
+ console.log(idElement);
+
+ const elementP = document.querySelectorAll(".primary-content p")
+ console.log(elementP);
+
+
+/*  
 Task 2
 ======
 
 When a user clicks the 'ALERT' button, an alert box should pop up with the text "Thanks for visiting Bikes for Refugees!"
 */
+
+function oneAlert(){
+    alert ("Thanks for visiting Bikes for Refugees!");
+}
 
 
 /*
