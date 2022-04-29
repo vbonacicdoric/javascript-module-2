@@ -17,7 +17,7 @@ Write JavaScript below that logs:
 */
 
  const letraP = document.querySelectorAll("p")
- console.log(letraP);
+ console.log(letraP.length);
 
 
  const divElement = document.querySelector("div")
@@ -27,7 +27,7 @@ Write JavaScript below that logs:
  console.log(idElement);
 
  const elementP = document.querySelectorAll(".primary-content p")
- console.log(elementP);
+ console.log(elementP.length);
 
 
 /*  
@@ -39,15 +39,21 @@ When a user clicks the 'ALERT' button, an alert box should pop up with the text 
 
 function oneAlert(){
     alert ("Thanks for visiting Bikes for Refugees!");
+    
 }
-
-
+// oneAlert()
+ 
+ document.querySelector("#alertBtn").addEventListener("click", oneAlert)
+// console.log(alert)
 /*
 Task 3
 =======
 
-Write JavaScript below that changes the background colour of the page when the 'Change colour' button is clicked.
+Write JavaScript below that changes the background color of the page when the 'Change color' button is clicked.
 */
+document.querySelector("#bgrChangeBtn").addEventListener("click",function (){
+    document.body.style.background = "lightblue"
+})
 
 
 /*
@@ -57,17 +63,50 @@ Task 4
 When a user clicks the ‘Add some text’ button, a new paragraph should be added inside the section that says “LEARN MORE”
 */
 
+const learnMore = document.querySelector("#addTextBtn") 
+const addInputButton = document.querySelector("#addArticleBtn")
+const input = document.querySelector("input")
+
+const addParagraph = (e) => {
+    e.preventDefault()
+    const findElement = document.querySelector("#mainArticles") 
+    const paragraph = document.createElement('p')
+    if(input.value != ""){
+        
+        paragraph.innerText = input.value;
+        input.value = ""
+    }else{
+        paragraph.innerText = "cyclingValeria";
+        
+    }
+    
+    findElement.appendChild(paragraph)
+}
+
+learnMore.addEventListener("click", addParagraph)
+addInputButton.addEventListener("click", addParagraph)
+
 
 
 /*
 Task 5
 ======
-
 When the 'Larger links!' button is clicked, the text of all links on the page should increase.
 */
 
+const links = document.querySelectorAll("a")
+ console.log(links.length);
+ const increaseLinksSize = () => { 
+    links.forEach((link) =>  {
+        link.style.fontSize = "25px"
+        
+    });
+ }
+document.querySelector("#largerLinksBtn").addEventListener("click", increaseLinksSize )
+
 
 /*
+
 Task 6
 ======
 
@@ -81,7 +120,7 @@ Task 7
 ======
 
 Create an array of 5 different colors.
-Using the same function in Task 3, every time the 'Change colour' button is clicked, the background color will be changed with the next color in the array.
+Using the same function in Task 3, every time the 'Change color' button is clicked, the background color will be changed with the next color in the array.
 The next color when you are in the last color of the array will be the first color again.
 */
 
