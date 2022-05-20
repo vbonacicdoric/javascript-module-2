@@ -7,7 +7,9 @@ Try to think of as many properties as you can!
 */
 
 let laptop = {
-    brand: "Lenovo",
-    screenSize: 13,
-    isTouchscreen: true,
-  };
+  brand: "MackBook Pro",
+  screenSize: 13,
+  isTouchscreen: true,
+  color: "grey",
+  language: "english",
+};

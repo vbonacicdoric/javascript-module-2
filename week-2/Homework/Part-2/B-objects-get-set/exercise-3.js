@@ -3,8 +3,11 @@
 */
 
 // WRITE CODE HERE
-
-
-console.log(kitten.name);
-
-// -> it should output: "Gilbert"
+const kitten = {
+    name: "Gilbert",
+  };
+  
+  console.log(kitten.name);
+  
+  // -> it should output: "Gilbert"
+  

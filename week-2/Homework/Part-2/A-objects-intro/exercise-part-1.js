@@ -17,3 +17,34 @@ var car = {
 
 */
 
+const taza = {
+    color: "pink",
+    reacionaAlCalor: true,
+    espacio: "400ml",
+  };
+  
+  const bike = {
+    color: "white",
+    monoplato: 1,
+    frenoDeDisco: false,
+  };
+  
+  const sombras = {
+    color: "calidos",
+    textura: "polvo",
+    pigmentacion: "alta",
+  };
+  
+  const maillot = {
+    color: "pink",
+    textura: "transpirable",
+    temporada: "verano",
+    bolsillos: true,
+  };
+  
+  const iPhone = {
+    color: "black",
+    modelo: "11",
+    memoriaGB: 259,
+  };
+  
