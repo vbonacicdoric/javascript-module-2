@@ -16,6 +16,7 @@ Create a new function called "addMovie"
 Call addMovies to add the new movie to the list and then showMovies to see the movies added on the screen.
 How many movies can you see on your page?
 
+
 Task 3
 Can you make sure the new movie you just added is showing on the screen? 
 TIP: use callbacks
@@ -59,9 +60,37 @@ var movies = [
 ];
 
 // create showMovies function
-
-
+const showMovies = (movies) => {
+  const container = document.querySelector("#all-movies");
+  container.innerHTML =
+    '<p class="alert alert-info">Number of movies: <span id="movies-number"></span></p>';
+  const moviesNumber = document.querySelector("#movies-number");
+  movies.forEach((movie) => {
+    text = document.createElement("p");
+    text.textContent = movie.title + " " + movie.director;
+    container.appendChild(text);
+  });
+  moviesNumber.innerText = movies.length;
+};
 // create a new movie object for your favorite movie
 
-
+const movieObj = {
+  title: "The Notebook",
+  director: "Nick Cassavetes",
+  type: "Romance",
+  haveWatched: true,
+};
 // create addMovies function
+
+const addMovies = (movieObject) => {
+  movies.push(movieObject);
+};
+
+setTimeout(() => {
+  showMovies(movies);
+}, 1000);
+
+setTimeout(() => {
+  addMovies(movieObj);
+  showMovies(movies);
+}, 2000);
